@@ -62,22 +62,32 @@ More details about these datasets and our processing steps can be found in our p
 
 ### Data Instances
 
-Documents are arranged as follows:
-
-- `text_list`: a list of sentences comprising the text of the document
-- `url`: the original url where the document was hosted
-- `image_info` is a key mapping to a list of images. each image contains:
-  - `image_name`: a filename that you could download the image to
-  - `face_detections`: `None` if no faces are detected (which should be the case in "fewer faces")
-  - `matched_text_index`: the index within `text_list` representing the sentence that this image is matched to
-  - `matched_sim`: the CLIP ViT-L/14 similarity between the image and the sentence at the matched index
-- `similarity_matrix`: a matrix of shape `len(image_info) x len(text_list)` where `similarity_matrix[i, j]` is the CLIP ViT-L/14 similarity between the `i`-th image and the `j`-th sentence.
-
+Documents included in the file contain: codechains, a csv of index.
+- `Codechains`: a series of txt files of concatenated python code of every chain.
+- `index.csv`: the information mapping every chain to its code txt file for every repo. Each instance contains:
+  * `filename`: a list contains the filenames of the concatenated code txt files.
+  * `chains`: the specific dependency chains displayed in lists. 
+            
 Here's an example:
+```
+filename :[
+‘../dataset/Codechains/CrossLoc_0_concatenated_files.txt',
+’../dataset/Codechains/CrossLoc_1_concatenated_files.txt', '../dataset/Codechains/CrossLoc_2_concatenated_files.txt',
+'../dataset/Codechains/CrossLoc_3_concatenated_files.txt', '../dataset/Codechains/CrossLoc_4_concatenated_files.txt',
+'../dataset/Codechains/CrossLoc_5_concatenated_files.txt', ‘../dataset/Codechains/CrossLoc_6_concatenated_files.txt']
+
+chains :[
+	['CrossLoc/utils/learning.py', 'CrossLoc/loss/depth.py', ‘CrossLoc/finetune_decoder_single_task.py'],
+  ['CrossLoc/dsacstar/setup.py'], 
+	['CrossLoc/dataloader/__init__.py'], 
+  ['CrossLoc/loss/semantics.py', 'CrossLoc/train_single_task.py'], 
+	['CrossLoc/utils/learning.py', 'CrossLoc/train_single_task.py'], 
+	['CrossLoc/dsacstar/setup_super.py'], 
+	['CrossLoc/networks/networks.py', 'CrossLoc/utils/learning.py', ‘CrossLoc/test_single_task.py']
+]
 
 ```
-
-```
+Each list in `chains` corresponds to a txt file. For a list [a.py, b.py, c.py]. The dependency relationship is : ‘a.py’ imported in ‘b.py’, ‘b.py’ imported in ‘c.py’. 
 
 
 
