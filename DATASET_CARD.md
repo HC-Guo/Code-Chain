@@ -49,10 +49,10 @@ Python
 |           Codechain                               |  | 
 |-----------------------------------------------------|----------|
 | Size                                       | 8.65GB    | 
-| The Number of chains| 562587 |
-| The Number of repos| 31182 |
+| The Number of Chains| 562587 |
+| The Number of Repos| 31182 |
 | Average Chain Length| 1.79 |
-| The Number of chains (chain length > 1 )| 246776 |
+| The Number of Chains (chain length > 1 )| 246776 |
 | Average Chain Length (chain length > 1 )| 2.81 |
 
 
