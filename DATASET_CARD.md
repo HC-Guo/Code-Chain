@@ -32,8 +32,7 @@
 
 ### Dataset Summary
 
-We release CodeChain, xxx[c4 corpus](https://www.tensorflow.org/datasets/catalog/c4) with images interleaved.
-We use a linear assignment algorithm to place images into longer bodies of text using CLIP features. mmc4 spans everyday topics like cooking, travel, techology, etc. A manual inspection of a random sample of documents shows that the images are, on average, relevant to the topic/content of the text, and, frequently specific to their assigned sentences. After filtering NSFW images, ads, etc., the corpus contains 585M images across 103M text documents interleaved with 43B English tokens.
+We release [CodeChain](https://www.tensorflow.org/datasets/catalog/c4), a large-scale repository-level code datasets for finetuing. We collecte over 50,000 Python repositories from GitHub, extract dependency relationships between files in each repository, and compile this information into dependency graphs saved as json files. After filtering out repositories with no dependency relationship and constructing chains using our random walk algorithm, CodeChain contains 562587 chains from 31182 repositories. A text file is concatenated for each chain, with the Python code arranged in the sequence of their import calls.
 
 ### Supported Tasks and Leaderboards
 
