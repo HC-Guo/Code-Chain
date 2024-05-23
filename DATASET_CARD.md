@@ -32,7 +32,7 @@
 
 ### Dataset Summary
 
-We release [CodeChain](https://www.tensorflow.org/datasets/catalog/c4), a large-scale repository-level code datasets for finetuing. We collecte over 50,000 Python repositories from GitHub, extract dependency relationships between files in each repository, and compile this information into dependency graphs saved as json files. After filtering out repositories with no dependency relationship and constructing chains using our random walk algorithm, CodeChain contains 562587 chains from 31182 repositories. A text file is concatenated for each chain, with the Python code arranged in the sequence of their import calls.
+We release [CodeChain](https://www.tensorflow.org/datasets/catalog/c4), a large-scale repository-level code datasets for finetuing. We collecte over 50,000 Python repositories from GitHub, extract dependency relationships between files in each repository, and compile this information into dependency graphs saved as json files. After filtering out repositories with no dependency relationship and constructing chains using our random walk algorithm, CodeChain contains 562587 chains from 31182 repositories. A text file is concatenated for each chain, with the Python code arranged in the sequence of their import calls according to the dependency chain.
 
 ### Supported Tasks and Leaderboards
 
