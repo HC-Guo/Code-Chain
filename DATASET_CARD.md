@@ -44,15 +44,20 @@ Python
 ## Dataset Structure
 
 
-You can directly download the "fewer faces" multimodal c4 documents at urls like this:
+### Dataset stats
 
-`https://storage.googleapis.com/ai2-jackh-mmc4-public/data_v1.1/docs_no_face_shard_{$SHARD}_v2.jsonl.zip`
+|           Codechain                               |  | 
+|-----------------------------------------------------|----------|
+| Size                                       | 8.65GB    | 
+| The Number of chains| 562587 |
+| The Number of repos| 31182 |
+| Average Chain Length| 1.79 |
+| The Number of chains (chain length > 1 )| 246776 |
+| Average Chain Length (chain length > 1 )| 2.81 |
 
-You can directly download CLIP ViT-L/14 features extracted from the images at urls like this:
 
-`https://storage.googleapis.com/ai2-jackh-mmc4-public/images/clip_vitl14_shard_{$SHARD}_features.pkl`
+More details about these datasets and our processing steps can be found in our paper xxxxx
 
-`SHARD` can vary from 0 to 23098. 
 
 
 ### Data Instances
