@@ -21,7 +21,7 @@ The total size of the whole datasets is approximately 8.65GB.
 | The Number of repos| 31182 |
 | Average Chain Length| 1.79 |
 
-More details about these datasets and our processing steps [can be found in our paper](https://arxiv.org/abs/2304.06939). (the current paper results describe v1 of the corpus, we will update to v1.1 soon).
+More details about these datasets and our processing steps can be found in our paper xxxxx
 
 ### Documents
 
