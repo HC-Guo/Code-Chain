@@ -68,7 +68,7 @@ Documents included in the file contain: codechains, a csv of index.
   * `filename`: a list contains the filenames of the concatenated code txt files.
   * `chains`: the specific dependency chains displayed in lists. 
             
-Here's an example:
+Here's an example of the `index.csv`:
 ```
 filename :[
 ‘../dataset/Codechains/CrossLoc_0_concatenated_files.txt',
@@ -89,6 +89,29 @@ chains :[
 ```
 Each list in `chains` corresponds to a txt file. For a list [a.py, b.py, c.py]. The dependency relationship is : ‘a.py’ imported in ‘b.py’, ‘b.py’ imported in ‘c.py’. 
 
+Here's an example text file of the `Codechains`, '....' means the original python code:
+
+```
+The code dependency chain is : ['Addarr/src/transmission.py', 'Addarr/src/addarr.py', 'Addarr/src/delete.py']
+""" 
+Addarr/src/transmission.py
+"""
+
+.......
+
+""" 
+Addarr/src/addarr.py
+"""
+
+.......
+
+"""
+'Addarr/src/delete.py'
+"""
+
+.......
+
+```
 
 
 ### Data Fields
