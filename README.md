@@ -84,10 +84,16 @@ Addarr/src/addarr.py
 
 
 
-## License
+## Licensing Information
 
-- Our CodeChain dataset is released under [ODC-BY](https://opendatacommons.org/licenses/by/1-0/).
-- By using mmc4, be aware of that you are also bound by the [Common Crawl terms of use](https://commoncrawl.org/terms-of-use/).
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
+This code is licensed under a MIT License.
+
+[![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+The benchmark is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Citation
 
