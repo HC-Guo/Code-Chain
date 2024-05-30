@@ -1,11 +1,11 @@
 # Code-Chain
-A Large-scale Repository-level Code Datasets for Finetuning
+A Large-scale Repository-level Code Datasets for Continue Pre-training and Supervised Fine-tuning
 
 ## Dataset Card
 
 
 ## Download
-You can directly download the Codechain documents at URLs like this:
+You can directly download the Raw Codechain Dataset at URLs like this:
 
 https://drive.google.com/file/d/1NJAHIf1KU1cSGra4COL0Q1CtTvx60sv2/view?usp=drive_link
 
@@ -25,7 +25,7 @@ The total size of the whole datasets is approximately 8.65GB.
 | Average Chain Length (chain length > 1 )| 2.81 |
 
 
-More details about these datasets and our processing steps can be found in our paper xxxxx
+More details about these datasets and our processing steps can be found in our paper.
 
 
 
@@ -95,10 +95,5 @@ This code is licensed under a MIT License.
 The benchmark is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-## Citation
-
-If you found our work useful, please consider citing:
-```
-```
 
 
