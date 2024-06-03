@@ -10,10 +10,8 @@
   - [Data Fields](#data-fields)
   - [Data Splits](#data-splits)
 - [Dataset Creation](#dataset-creation)
-  - [Curation Rationale](#curation-rationale)
+  - [Creation Rationale](#curation-rationale)
   - [Source Data](#source-data)
-  - [Annotations](#annotations)
-  - [Personal and Sensitive Information](#personal-and-sensitive-information)
 - [Considerations for Using the Data](#considerations-for-using-the-data)
   - [Social Impact of Dataset](#social-impact-of-dataset)
   - [Discussion of Biases](#discussion-of-biases)
@@ -32,16 +30,17 @@
 
 ### Dataset Summary
 
-We release [CodeChain](https://www.tensorflow.org/datasets/catalog/c4), a large-scale repository-level code datasets for finetuing. We collecte over 50,000 Python repositories from GitHub, extract dependency relationships between files in each repository, and compile this information into dependency graphs saved as json files. After filtering out repositories with no dependency relationship and constructing chains using our random walk algorithm, CodeChain contains 562587 chains from 31182 repositories. A text file is concatenated for each chain, with the Python code arranged in the sequence of their import calls according to the dependency chain.
+We release CodeChain, an augmentation of the code pre-training dataset at the repository level, provides a rich context for code LLMs to learn from. We collecte over 50,000 Python repositories from GitHub, extract dependency relationships between files in each repository. Then, we employ a novel random walk method based on file dependencies to determine the code chain and concatenate the corresponding files. A text file is concatenated for each chain, with the Python code arranged in the sequence of their import calls according to the dependency chain. After quality screening, CodeChain contains 562587 chains from 31182 repositories. 
 
 ### Supported Tasks and Leaderboards
 
-This is a pre-training corpus.
+This is a dataset for code LLMs to learn at the repository level.
 
 ### Code Languages
 Python
 
 ## Dataset Structure
+You can directly download Codechain at urls like this:
 
 
 ### Dataset stats
@@ -54,9 +53,6 @@ Python
 | Average Chain Length| 1.79 |
 | The Number of Chains (chain length > 1 )| 246776 |
 | Average Chain Length (chain length > 1 )| 2.81 |
-
-
-More details about these datasets and our processing steps can be found in our paper xxxxx
 
 
 
@@ -120,39 +116,32 @@ See above.
 
 ### Data Splits
 
-N/A, this is a pretraining corpus.
+N/A, this is a pretraining dataset.
 
 ## Dataset Creation
 
 The dataset was created from the middle of 2024 to early 2023 at the Allen Institute for AI.
 
-### Curation Rationale
+### Creation Rationale
+Code large language models (LLMs) have shown remarkable advances in code understanding and generation tasks. Programming corpora, composed of a collection of public code projects and documentation, serve as the foundation for various code LLMs. In real-world software development scenario, repositories often consist of multiple files with numerous cross-file dependencies. Leveraging the dependency information can effectively enhance the code understanding and generation capabilities. However, most of existing datasets randomly concatenate files, fail to utilize dependencies effectively. Consequently, there is a pressing need for an open dataset that specifically focus on capturing and leveraging the dependencies between files.
+
+
+To fill in this gap, we release \ourdata{}, an augmentation of the code pre-training dataset at the repository level, provides a rich context for code LLMs to learn from. 
+
+### Data Creation Process
 
 In-context learning \cite{brown2020language} enables sequence models to adapt to new tasks without any parameter updates by interleaving a few supervised examples in a prompt. 
 
 ### Source Data
 
-#### Initial Data Collection and Normalization
+#### Initial Data Collection and Filtering
 
 See the paper for more details.
 
-#### Who are the source language producers?
+#### Who are the source producers?
 
-Authors of publicly accessible webpages.
+Authors of publicly accessible repositories on Github.
 
-### Annotations
-
-#### Annotation process
-
-See the paper for more details. The corpus, as a whole, is not explicitly annotated.
-
-#### Who are the annotators?
-
-N/A
-
-### Personal and Sensitive Information
-
-See the paper for an assessment of the risks of releasing image URLs. In particular, for the public, directly-downloadable corpus, we attempt to remove instances with faces.
 
 ## Considerations for Using the Data
 
@@ -160,33 +149,33 @@ See the paper for an assessment of the risks of releasing image URLs. In particu
 
 Potential benefits:
 
-- Useful as a pretraining corpus for in-context vision+language models; such models could be adapted later to better align with human preferences/express fewer pernicious social biases
-- As in-context vision+language models become more common, if the standard pretraining set is public, it will be easier to audit models with respect to the training corpora.
+- CodeChain provides a richer context for LLMs to learn from by augmenting the code pre-training dataset at the repository level. This richer context can lead to improved model performance and understanding of code semantics.
+- We develop a comprehensive data curation pipeline that begins with scraping publicly available GitHub repositories and our method ensures the generation of dependencies in the true file order, which is crucial for handling code repositories. This could help others to build upon our works and furthur advance the ability of Code LLMs at the repository level.
 
 Potential risks:
 
-- As with most large-scale image datasets: images of individuals who did not explicitly consent to be in the dataset are included. Given the scale of the dataset, we think the risk of including these images is similar to the risk of such images being indexed by search engines.
-- mmc4 inherits the risks of the text-only version of c4, e.g., the internet reflects pernicious social biases, and thus models trained on this corpus might also reproduce those biases at test time.
+- Collecting code from over 50,000 Python repositories from GitHub raises potential privacy and legal concerns, especially if the code includes proprietary or copyrighted material without proper authorization or consent.
+- Like any large-scale dataset sourced from online repositories, CodeChain may inadvertently capture and perpetuate biases present in the original data sources. This could lead to biased model predictions and reinforce existing societal inequalities in code development and usage.
 
 ### Discussion of Biases
 
-Web data, especially taken as a whole, often reflects the biases present in society. We encourage model trainers to reflect upon the distinction between an observational model of web text (e.g., as a means of auditing what is contained in that web text) versus a model that one endorses the outputs of as "correct", vs. one connects to other downstream systems that cause deployed systems to make decisions.
+- The dataset is derived from GitHub repositories, which may not represent the full spectrum of coding practices and styles across different programming communities. Certain programming paradigms or niche domains may be overrepresented or underrepresented.
+- The method of extracting dependency relationships and determining code chains through random walks may inadvertently prioritize certain code structures or project architectures over others. Biases in the dependency resolution algorithm could influence the composition of the code chains and the learning opportunities provided to code LLMs.
 
 ### Other Known Limitations
 
-- The dataset is English only.
-- Our filtration process discards images that do not relate to the text of web-pages above a specific model-estimated threshold. This might erase images/webpages that use image content in more creative, non-iteral ways.
+- CodeChain focuses on Python repositories, potentially excluding insights from other programming languages. 
+- The criteria used for quality screening may inadvertently favor certain types of code or repositories, potentially excluding valuable but unconventional coding practices from the dataset.
 
 ## Additional Information
 
 ### Dataset Curators
 
-This dataset was initially curated by researchers from AI2, UCSB, University of Washington, Columbia University, Yonsei University. The author list of v1 of the arxiv paper is an accurate list of specific contributors.
+
 
 ### Licensing Information
 
-- The new contributions of mmc4 are released under ODC-BY.
-- By using mmc4, be aware of that you are also bound by the Common Crawl terms of use.
+
 
 ### Citation Information
 
