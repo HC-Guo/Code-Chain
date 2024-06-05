@@ -118,7 +118,7 @@ N/A, this is a pretraining dataset.
 
 ## Dataset Creation
 
-The dataset was created from the middle of 2024 to early 2023 at the Allen Institute for AI.
+The dataset was created from the early of 2024 to mid 2024.
 
 ### Creation Rationale
 Code large language models (LLMs) have shown remarkable advances in code understanding and generation tasks. Programming corpora, composed of a collection of public code projects and documentation, serve as the foundation for various code LLMs. In real-world software development scenario, repositories often consist of multiple files with numerous cross-file dependencies. Leveraging the dependency information can effectively enhance the code understanding and generation capabilities. However, most of existing datasets randomly concatenate files, fail to utilize dependencies effectively. Consequently, there is a pressing need for an open dataset that specifically focus on capturing and leveraging the dependencies between files.
@@ -127,8 +127,9 @@ Code large language models (LLMs) have shown remarkable advances in code underst
 To fill in this gap, we release \ourdata{}, an augmentation of the code pre-training dataset at the repository level, provides a rich context for code LLMs to learn from. 
 
 ### Data Creation Process
+![image](assets/framework.png)
 
-In-context learning \cite{brown2020language} enables sequence models to adapt to new tasks without any parameter updates by interleaving a few supervised examples in a prompt. 
+See the paper for more details.
 
 ### Source Data
 
@@ -169,9 +170,7 @@ Potential risks:
 
 ### Dataset Curators
 
-![image](assets/framework.png)
 
-See the paper for more details.
 
 ### Licensing Information
 
