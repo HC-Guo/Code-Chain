@@ -23,10 +23,8 @@
 
 ## Dataset Description
 
-- **Homepage:** www.github.com/allenai/mmc4
-- **Repository:** www.github.com/allenai/mmc4
-- **Paper:** https://arxiv.org/abs/2304.06939
-- **Point of Contact:** Jack Hessel (jackh@allenai.org)
+- **Repository:** https://github.com/HC-Guo/Code-Chain
+- **Point of Contact:** xxx (xx@xxx)
 
 ### Dataset Summary
 
@@ -171,7 +169,7 @@ Potential risks:
 
 ### Dataset Curators
 
-![image](document/pipeline.png)
+![image](assets/framework.png)
 
 See the paper for more details.
 
