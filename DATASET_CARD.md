@@ -24,7 +24,6 @@
 ## Dataset Description
 
 - **Repository:** https://github.com/HC-Guo/Code-Chain
-- **Point of Contact:** xxx (xx@xxx)
 
 ### Dataset Summary
 
@@ -110,7 +109,7 @@ Addarr/src/addarr.py
 
 ### Data Fields
 
-See above.
+See our paper for more details.
 
 ### Data Splits
 
@@ -163,7 +162,7 @@ Potential risks:
 
 ### Other Known Limitations
 
-- CodeChain focuses on Python repositories, potentially excluding insights from other programming languages. 
+- CodeChain focuses on Python repositories, potentially excluding insights from other programming languages. But anyone can leverage our pipeline for more different code languages.
 - The criteria used for quality screening may inadvertently favor certain types of code or repositories, potentially excluding valuable but unconventional coding practices from the dataset.
 
 ## Additional Information
