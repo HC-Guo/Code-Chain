@@ -3,7 +3,7 @@ A Large-scale Repository-level Code Datasets for Continue Pre-training and Super
 
 ## Dataset Card
 
-([Dataset Card](data)).
+You can review our [Dataset Card](DATASET_CARD.md)) for more details.
 
 ## Download
 You can directly download the Raw Codechain Dataset at URLs like this:
