@@ -8,9 +8,15 @@ You can review our [Dataset Card](DATASET_CARD.md) for more details.
 ## Download
 You can directly download the Raw Codechain Dataset at URLs like this:
 
-https://drive.google.com/file/d/1NJAHIf1KU1cSGra4COL0Q1CtTvx60sv2/view?usp=drive_link
+[https://drive.google.com/file/d/1NJAHIf1KU1cSGra4COL0Q1CtTvx60sv2/view?usp=drive_link](https://drive.google.com/file/d/1NJAHIf1KU1cSGra4COL0Q1CtTvx60sv2/view?usp=drive_link)
 
-The total size of the whole datasets is approximately 8.65GB.
+The total size of the raw datasets is approximately 8.65GB.
+
+Download the datasets with both raw and instrucitons at URLS like this:
+
+[https://drive.google.com/file/d/1NJAHIf1KU1cSGra4COL0Q1CtTvx60sv2/view?usp=drive_link](https://drive.google.com/file/d/1ZsLMNycCHtmzsLJuHrOA5INIwWs64osz/view?usp=drive_link)
+
+The total size of the datasets with both raw and instrucitons is approximately 20GB.
 
 
 ## Dataset stats
@@ -24,6 +30,7 @@ The total size of the whole datasets is approximately 8.65GB.
 | Average Chain Length| 1.79 |
 | The Number of Chains (chain length > 1 )| 246776 |
 | Average Chain Length (chain length > 1 )| 2.81 |
+| Number of Chain-instruct| 1,021,550 |
 
 
 More details about these datasets and our processing steps can be found in our paper.
@@ -33,10 +40,12 @@ More details about these datasets and our processing steps can be found in our p
 ### Data Instances
 
 Documents included in the file contain: codechains, a csv of index.
+
+- `Instructions`: Json files for 5 instructions tasks **predicting dependencies from code files, completing code based on dependencies, writing README files, creating API documentation, and generating configuration files**. Detailed examples are available in our paper.
 - `Codechains`: a series of txt files of concatenated python code of every chain.
-- `index.csv`: the information mapping every chain to its code txt file for every repo. Each instance contains:
+- `index.csv`: the information mapping every chain to its code txt file for every repo. Use it with file `Codechains`. Each instance contains:
   * `filename`: a list contains the filenames of the concatenated code txt files.
-  * `chains`: the specific dependency chains displayed in lists. 
+  * `chains`: the specific dependency chains displayed in lists.
             
 Here's an example of the `index.csv`:
 ```
